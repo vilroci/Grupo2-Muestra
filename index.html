@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información sobre RAID</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-server"></i>
+                <span>Filoso</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">RAID</a></li>
+                <li><a href="lvm.html">LVM</a></li>
+                <li><a href="indexx.html">Sobre Nosotros</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>Configuraciones RAID</h1>
+            <p>Explora las diferentes configuraciones RAID para optimizar tu almacenamiento</p>
+        </div>
+
+        <section class="carousel-section">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="slide active">
+                        <img src="https://www.tecnozero.com/wp-content/uploads/2017/12/raid_0.png" alt="RAID 0">
+                        <div class="slide-content">
+                            <h3>RAID 0</h3>
+                            <p>Máximo rendimiento sin redundancia</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.tecnozero.com/wp-content/uploads/2017/12/raid-1.png" alt="RAID 1">
+                        <div class="slide-content">
+                            <h3>RAID 1</h3>
+                            <p>Duplicación completa de datos</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.tecnozero.com/wp-content/uploads/2017/12/raid-5.png" alt="RAID 5">
+                        <div class="slide-content">
+                            <h3>RAID 5</h3>
+                            <p>Balance entre rendimiento y redundancia</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.tecnozero.com/wp-content/uploads/2017/12/raid-10.png" alt="RAID 10">
+                        <div class="slide-content">
+                            <h3>RAID 10</h3>
+                            <p>Máxima seguridad y rendimiento</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="raid-info">
+            <h2>Tipos de RAID</h2>
+            <div class="card-container">
+                <div class="card" data-raid="raid0">
+                    <div class="card-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>RAID 0</h3>
+                    <div class="card-content">
+                        <p>División de datos equitativa entre dos o más discos sin redundancia. Máximo rendimiento pero sin protección contra fallos.</p>
+                        <ul class="features">
+                            <li><i class="fas fa-tachometer-alt"></i> Velocidad máxima</li>
+                            <li><i class="fas fa-database"></i> 100% capacidad</li>
+                            <li><i class="fas fa-exclamation-triangle"></i> Sin redundancia</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" data-raid="raid1">
+                    <div class="card-icon">
+                        <i class="fas fa-copy"></i>
+                    </div>
+                    <h3>RAID 1</h3>
+                    <div class="card-content">
+                        <p>Duplicación exacta de datos en dos o más discos. Ofrece redundancia completa a costa de capacidad.</p>
+                        <ul class="features">
+                            <li><i class="fas fa-shield-alt"></i> Redundancia total</li>
+                            <li><i class="fas fa-database"></i> 50% capacidad</li>
+                            <li><i class="fas fa-sync"></i> Recuperación rápida</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" data-raid="raid5">
+                    <div class="card-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>RAID 5</h3>
+                    <div class="card-content">
+                        <p>Distribuye la paridad junto con los datos. Balance entre rendimiento y redundancia.</p>
+                        <ul class="features">
+                            <li><i class="fas fa-hdd"></i> Mínimo 3 discos</li>
+                            <li><i class="fas fa-database"></i> N-1 capacidad</li>
+                            <li><i class="fas fa-shield-alt"></i> Tolerancia a fallos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" data-raid="raid10">
+                    <div class="card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>RAID 10</h3>
+                    <div class="card-content">
+                        <p>Combinación de RAID 1 y RAID 0. Ofrece lo mejor de ambos mundos: rendimiento y redundancia.</p>
+                        <ul class="features">
+                            <li><i class="fas fa-tachometer-alt"></i> Alto rendimiento</li>
+                            <li><i class="fas fa-database"></i> 50% capacidad</li>
+                            <li><i class="fas fa-shield-alt"></i> Máxima protección</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Guía RAID - Proyecto 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navegación móvil
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Carrusel
+        const carousel = document.querySelector('.carousel');
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        prevButton.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+
+        // Autoplay
+        setInterval(() => showSlide(currentSlide + 1), 5000);
+
+        // Cards interactivas
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
