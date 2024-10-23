@@ -19,7 +19,7 @@ body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #fff;
+    background-color: #f8fafc;
 }
 
 /* Header y navegación */
@@ -30,6 +30,7 @@ body {
     width: 100%;
     top: 0;
     z-index: 100;
+    
 }
 
 .navbar {
@@ -38,7 +39,7 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem var(--spacing);
+    padding: 1rem;
 }
 
 .logo {
@@ -47,7 +48,7 @@ body {
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: #00c1d4;
 }
 
 .logo i {
@@ -86,7 +87,7 @@ body {
 .hero {
     background: linear-gradient(rgba(42, 63, 84, 0.9), rgba(0, 193, 212, 0.7)),
                 url('/api/placeholder/1200/400') center/cover;
-    height: 70vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -22,7 +22,7 @@
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     line-height: 1.6;
-    background-color: white;
+    background-color: 	#e0e0e0;
 }
 
 /* Header y Navegación */
@@ -54,7 +54,7 @@ body {
 }
 
 .logo i {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 .nav-links {
@@ -86,9 +86,17 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 8rem 1rem 4rem;
+    background: linear-gradient(rgba(0, 193, 212, 0.7), rgba(42, 63, 84, 0.9)),
+                url('/api/placeholder/1200/400') center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background: linear-gradient(to bottom, #00c1d4, rgba(42, 63, 84, 0.9));
+    color: white;
+    padding: var(--spacing);
+    margin-top: 4rem;
 }
 
 .hero h1 {
@@ -100,7 +108,7 @@ body {
 
 .hero p {
     font-size: 1.25rem;
-    color: var(--secondary-color);
+    color: white;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -148,7 +156,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0);
     border: none;
     width: 3rem;
     height: 3rem;
@@ -163,7 +171,7 @@ body {
 }
 
 .carousel-button:hover {
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.329);
     color: var(--primary-dark);
 }
 
@@ -174,7 +182,9 @@ body {
 .next {
     right: 1rem;
 }
-
+li i {
+    padding-right: 15px;
+}
 /* RAID Info Section */
 .raid-info {
     max-width: 1200px;
@@ -221,6 +231,7 @@ body {
     justify-content: center;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+    padding: 1rem;
 }
 
 .card h3 {
