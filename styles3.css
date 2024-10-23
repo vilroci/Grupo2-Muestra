@@ -19,7 +19,7 @@ body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #f8fafc;
+    background-color: #f4f4f2;
 }
 
 /* Header y navegación */
@@ -48,11 +48,11 @@ body {
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #00c1d4;
+    color: #005bc5;
 }
 
 .logo i {
-    color: var(--accent-color);
+    color:  #005bc5;
 }
 
 .nav-links {
@@ -72,8 +72,8 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--accent-color);
-    background-color: rgba(0, 193, 212, 0.1);
+    color:  #005bc5;
+    background-color: rgba(0, 91, 197, 0.1);
 }
 
 .mobile-menu {
@@ -85,7 +85,7 @@ body {
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(42, 63, 84, 0.9), rgba(0, 193, 212, 0.7)),
+    background: linear-gradient(#243a69, rgba(0, 193, 212, 0.7)),
                 url('/api/placeholder/1200/400') center/cover;
     height: 60vh;
     display: flex;
@@ -264,7 +264,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--primary-color);
+    background: #243a69;
     color: white;
     text-align: center;
     padding: var(--spacing);

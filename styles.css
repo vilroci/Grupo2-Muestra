@@ -22,7 +22,7 @@
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     line-height: 1.6;
-    background-color: 	#e0e0e0;
+    background-color: 	#f4f4f2;
 }
 
 /* Header y Navegación */
@@ -50,7 +50,7 @@ body {
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: #005bc5;
 }
 
 .logo i {
@@ -74,8 +74,8 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--primary-color);
-    background-color: rgba(37, 99, 235, 0.1);
+    color: #005bc5;
+    background-color: rgba(0, 91, 197, 0.1);
 }
 
 .mobile-menu {
@@ -86,7 +86,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 193, 212, 0.7), rgba(42, 63, 84, 0.9)),
+    background: linear-gradient(#00c1d4b3, #243a69),
                 url('/api/placeholder/1200/400') center/cover;
     height: 60vh;
     display: flex;
@@ -101,8 +101,6 @@ body {
 
 .hero h1 {
     font-size: 3rem;
-    font-weight: 800;
-    color: white;
     margin-bottom: 1rem;
 }
 
@@ -166,13 +164,13 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    color: var(--primary-color);
+    color: white;
     transition: var(--transition);
 }
 
 .carousel-button:hover {
     background: rgba(255, 255, 255, 0.329);
-    color: var(--primary-dark);
+    color: rgb(255, 255, 255);
 }
 
 .prev {
@@ -195,7 +193,7 @@ li i {
 .raid-info h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--primary-dark);
+    color: #012677;
     margin-bottom: 3rem;
 }
 
@@ -223,7 +221,7 @@ li i {
 .card-icon {
     width: 4rem;
     height: 4rem;
-    background: var(--primary-color);
+    background: #005bc5;
     color: var(--white);
     border-radius: 1rem;
     display: flex;
@@ -255,7 +253,7 @@ li i {
 }
 
 .footer {
-    background: rgba(44, 62, 80, 0.9);
+    background: #243a69;
     color: white;
     text-align: center;
     padding: var(--spacing);

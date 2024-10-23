@@ -19,6 +19,7 @@ body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    background-color: #f4f4f2;
 }
 
 /* Header y navegación */
@@ -46,7 +47,7 @@ body {
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #005bc5;
 }
 
 
@@ -68,8 +69,8 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #2563eb;
-    background-color: rgba(37, 99, 235, 0.1);
+    color: #005bc5;
+    background-color: rgba(0, 91, 197, 0.1);
 }
 
 .mobile-menu {
@@ -80,7 +81,7 @@ body {
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(0, 193, 212, 0.7), rgba(42, 63, 84, 0.9)),
+    background: linear-gradient(rgba(0, 193, 212, 0.7), #243a69),
                 url('/api/placeholder/1200/400') center/cover;
     height: 60vh;
     display: flex;
@@ -99,6 +100,13 @@ body {
     margin-bottom: 1rem;
 }
 
+.hero p {
+    font-size: 1.25rem;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* Secciones generales */
 .section {
     padding: var(--spacing);
@@ -108,8 +116,9 @@ body {
 
 .section h2 {
     text-align: center;
-    margin-bottom: var(--spacing);
-    color: #333;
+    font-size: 2.5rem;
+    color: #012677;
+    margin-bottom: 3rem;
 }
 
 /* Componentes grid */
@@ -151,13 +160,13 @@ body {
 /* Comandos */
 .commands-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: var(--spacing);
 }
 
 .command-box {
     background: #e0e0e0;
-    padding: var(--spacing);
+    padding: 1rem;
     border-radius: 8px;
 }
 
@@ -186,7 +195,7 @@ body {
 
 /* Footer */
 .footer {
-    background: rgba(44, 62, 80, 0.9);
+    background: #243a69;
     color: white;
     text-align: center;
     padding: var(--spacing);
