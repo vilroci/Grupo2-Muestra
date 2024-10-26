@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
     --secondary-color: #475569;
-    --accent-color: #f59e0b;
+    --accent-color: #00c1d4;
     --text-color: #1f2937;
-    --light-bg: #f8fafc;
+    --bg-dark: #303030;
+    --bg-darker: #252525;
+    --bg-card: #373737;
     --white: #ffffff;
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
     --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
@@ -22,13 +22,13 @@
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     line-height: 1.6;
-    background-color: 	#303030;
+    background-color: var(--bg-dark);
 }
 
 /* Header y Navegación */
 .header {
-    background: #252525;
-    box-shadow: 0 2px 10px rgb(0, 0, 0);
+    background: var(--bg-darker);
+    box-shadow: var(--shadow-md);
     position: fixed;
     width: 100%;
     top: 0;
@@ -50,11 +50,7 @@ body {
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #00c1d4;
-}
-
-.logo i {
-    font-size: 1.5rem;
+    color: var(--accent-color);
 }
 
 .nav-links {
@@ -74,7 +70,7 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #00c1d4;
+    color: var(--accent-color);
     background-color: rgba(0, 193, 212, 0.1);
 }
 
@@ -86,7 +82,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(#00c1d4b3, #243a69),
+    background: linear-gradient(rgba(0, 193, 212, 0.7), #243a69),
                 url('/api/placeholder/1200/400') center/cover;
     height: 60vh;
     display: flex;
@@ -94,7 +90,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: var(--white);
     padding: var(--spacing);
     margin-top: 4rem;
 }
@@ -106,7 +102,6 @@ body {
 
 .hero p {
     font-size: 1.25rem;
-    color: white;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -122,21 +117,33 @@ body {
     position: relative;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    height: 400px;
+    background-color: var(--bg-darker);
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-inner {
+    position: relative;
+    height: 100%;
 }
 
 .slide {
-    display: none;
-    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
 .slide.active {
-    display: block;
+    opacity: 1;
 }
 
 .slide img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -146,15 +153,20 @@ body {
     left: 0;
     right: 0;
     padding: 2rem;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
     color: var(--white);
+}
+
+.slide-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0.1);
     border: none;
     width: 3rem;
     height: 3rem;
@@ -164,13 +176,13 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    color: white;
+    color: var(--bg-card);
     transition: var(--transition);
+    z-index: 10;
 }
 
 .carousel-button:hover {
-    background: rgba(255, 255, 255, 0.329);
-    color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .prev {
@@ -180,9 +192,7 @@ body {
 .next {
     right: 1rem;
 }
-li i {
-    padding-right: 15px;
-}
+
 /* RAID Info Section */
 .raid-info {
     max-width: 1200px;
@@ -193,11 +203,22 @@ li i {
 .raid-info h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #f8fcf8;
+    color: var(--white);
     margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
-
+.raid-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--accent-color);
+}
 
 .card-container {
     display: grid;
@@ -207,7 +228,7 @@ li i {
 }
 
 .card {
-    background: #373737;
+    background: var(--bg-card);
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: var(--shadow-md);
@@ -223,7 +244,7 @@ li i {
 .card-icon {
     width: 4rem;
     height: 4rem;
-    background: #00c1d4b3;
+    background: rgba(0, 193, 212, 0.7);
     color: var(--white);
     border-radius: 1rem;
     display: flex;
@@ -236,12 +257,12 @@ li i {
 
 .card h3 {
     font-size: 1.5rem;
-    color: #00c1d4;
+    color: var(--accent-color);
     margin-bottom: 1rem;
 }
 
 .card-content {
-    color: white;
+    color: var(--white);
 }
 
 .features {
@@ -252,11 +273,12 @@ li i {
 .features li {
     display: flex;
     align-items: center;
+    gap: 0.75rem;
 }
 
 .footer {
-    background: #243a69;
-    color: white;
+    background: var(--bg-darker);
+    color: var(--white);
     text-align: center;
     padding: var(--spacing);
     margin-top: var(--spacing);

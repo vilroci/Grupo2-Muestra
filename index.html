@@ -32,7 +32,7 @@
         <section class="carousel-section">
             <div class="carousel">
                 <div class="carousel-inner">
-                    <div class="slide active">
+                    <div class="slide">
                         <img src="https://www.tecnozero.com/wp-content/uploads/2017/12/raid_0.png" alt="RAID 0">
                         <div class="slide-content">
                             <h3>RAID 0</h3>
@@ -134,41 +134,63 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; Guía RAID - Proyecto 2024</p>
+            <p>&copy; Sharpness Technologies - 2024</p>
         </div>
     </footer>
 
     <script>
-        // Navegación móvil
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Carrusel
-        const carousel = document.querySelector('.carousel');
-        const slides = document.querySelectorAll('.slide');
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
-        let currentSlide = 0;
-
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    let currentSlide = 0;
+    
+    // Mostrar el primer slide al cargar
+    showSlide(0);
+    
+    function showSlide(index) {
+        // Remover clase active de todos los slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Ajustar el índice si se pasa de los límites
+        currentSlide = index;
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
         }
-
-        prevButton.addEventListener('click', () => showSlide(currentSlide - 1));
-        nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
-
-        // Autoplay
-        setInterval(() => showSlide(currentSlide + 1), 5000);
-
-        // Cards interactivas
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', function() {
-                this.classList.toggle('expanded');
-            });
-        });
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+        
+        // Activar el slide actual
+        slides[currentSlide].classList.add('active');
+    }
+    
+    // Event listeners para los botones
+    prevButton.addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+    });
+    
+    nextButton.addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+    });
+    
+    // Autoplay
+    function autoPlay() {
+        showSlide(currentSlide + 1);
+    }
+    
+    const autoPlayInterval = setInterval(autoPlay, 5000);
+    
+    // Detener autoplay cuando el mouse está sobre el carrusel
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+        setInterval(autoPlay, 5000);
+    });
+});
     </script>
 </body>
 </html>
