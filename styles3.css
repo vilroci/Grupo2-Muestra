@@ -242,7 +242,7 @@ body {
 }
 
 .feature-card {
-    background: #57595c;
+    background: var(--primary-color) ;
     padding: var(--spacing);
     border-radius: 8px;
     margin-top: var(--spacing);
