@@ -1,6 +1,6 @@
 /* Variables y reset */
 :root {
-    --primary-color: #2a3f54;
+   /* --primary-color: #2a3f54;*/
     --secondary-color: #3498db;
     --accent-color: #00c1d4;
     --text-color: #333;
@@ -242,7 +242,7 @@ body {
 }
 
 .feature-card {
-    background: var(--primary-color) ;
+    background: #57595c;
     padding: var(--spacing);
     border-radius: 8px;
     margin-top: var(--spacing);
