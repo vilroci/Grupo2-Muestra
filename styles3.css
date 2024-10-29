@@ -222,7 +222,7 @@ body {
 
 .command-box code {
     display: block;
-    background: var(--primary-color); 
+    background: #57595c; 
     color: white;
     padding: 1rem;
     border-radius: 8px;
