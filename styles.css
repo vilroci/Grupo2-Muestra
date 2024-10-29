@@ -53,6 +53,16 @@ body {
     color: var(--accent-color);
 }
 
+.logo li {
+    list-style: none;
+}
+
+ .logo li a {
+    color: #00c1d4;
+    text-decoration: none;
+    
+ }
+
 .nav-links {
     display: flex;
     gap: 2rem;
